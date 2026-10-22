@@ -1,5 +1,6 @@
 ---
 import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "../componentes/Header/Header.astro";
 
 const projects = [
 	{
@@ -85,21 +86,7 @@ const projects = [
 	</head>
 	<body>
 		<a class="skip-link" href="#main">Skip to content</a>
-		<header class="site-header" id="top">
-			<div class="site-width header-inner">
-				<a class="wordmark" href="#top" aria-label="Valencia Web home">
-					<span class="wordmark-mark" aria-hidden="true">V</span>
-					<span>VALENCIA<span class="wordmark-light">WEB</span></span>
-				</a>
-				<nav class="main-nav" aria-label="Main navigation">
-					<a href="#projects">Work <span>06</span></a>
-					<a href="#about">About</a>
-					<a class="nav-contact" href="#contact"
-						>Get in touch <span aria-hidden="true">↗</span></a
-					>
-				</nav>
-			</div>
-		</header>
+		<Header />
 
 		<main id="main">
 			<section class="hero site-width" aria-labelledby="hero-title">
@@ -107,7 +94,8 @@ const projects = [
 					<p class="eyebrow">
 						<span class="status-dot" aria-hidden="true"></span> Independent
 						digital portfolio <span class="eyebrow-place"
-							>/ Valencia, ES</span>
+							>/ Valencia, ES</span
+						>
 					</p>
 					<h1 id="hero-title">
 						Good websites<br />make you <span class="hero-accent"
@@ -383,23 +371,9 @@ const projects = [
 		margin-inline: auto;
 	}
 
-	.site-header {
-		position: relative;
-		z-index: 2;
-		border-bottom: 1px solid var(--line);
-	}
-
-	.header-inner,
-	.main-nav,
-	.wordmark,
 	.footer-bottom {
 		display: flex;
 		align-items: center;
-	}
-
-	.header-inner {
-		min-height: 82px;
-		justify-content: space-between;
 	}
 
 	.wordmark {
@@ -425,35 +399,16 @@ const projects = [
 		font-size: 19px;
 	}
 
-	.main-nav {
-		gap: clamp(22px, 4vw, 56px);
-		font-size: 13px;
-		font-weight: 600;
-	}
-
-	.main-nav a,
 	.text-link,
 	.contact-link,
 	.footer-bottom > a:last-child {
 		transition: color 180ms ease;
 	}
 
-	.main-nav a:hover,
 	.text-link:hover,
 	.contact-link:hover,
 	.footer-bottom > a:last-child:hover {
 		color: var(--orange);
-	}
-
-	.main-nav a span {
-		margin-left: 3px;
-		color: var(--muted);
-		font-size: 10px;
-	}
-
-	.main-nav .nav-contact {
-		padding: 11px 15px;
-		border: 1px solid var(--ink);
 	}
 
 	.hero {
