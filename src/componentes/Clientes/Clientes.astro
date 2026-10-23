@@ -1,0 +1,44 @@
+---
+import "./clientes.css";
+
+interface Client {
+    name: string;
+    wordmark: string;
+    style: "serif" | "wide" | "italic" | "mono" | "bold" | "soft";
+}
+
+const clients: Client[] = [
+    { name: "Casa Roble", wordmark: "casa roble", style: "serif" },
+    { name: "Norte Studio", wordmark: "NORTE", style: "wide" },
+    { name: "Luma Café", wordmark: "luma café", style: "italic" },
+    { name: "Forma Objects", wordmark: "FORMA", style: "mono" },
+    { name: "Marea Estudio", wordmark: "marea", style: "soft" },
+    { name: "Cobalto", wordmark: "COBALTO", style: "bold" },
+];
+---
+
+<section
+    class="clientes-section"
+    id="clientes"
+    aria-labelledby="clientes-title"
+>
+    <div class="clientes-inner">
+        <h2 id="clientes-title">Clientes</h2>
+        <div class="clientes-grid">
+            {
+                clients.map((client) => (
+                    <div
+                        class:list={[
+                            "cliente-logo",
+                            `cliente-logo--${client.style}`,
+                        ]}
+                        role="img"
+                        aria-label={`Logo de muestra: ${client.name}`}
+                    >
+                        <span aria-hidden="true">{client.wordmark}</span>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
