@@ -1,0 +1,87 @@
+---
+import "./work.css";
+
+const { projects } = Astro.props;
+---
+
+<section class="work-section" id="projects" aria-labelledby="work-title">
+    <div class="work-inner">
+        <div class="section-heading">
+            <div>
+                <p class="section-eyebrow">
+                    Unas cuantas cosas hechas con esmero
+                </p>
+                <h2 id="work-title">
+                    Selección de trabajos<span class="period">.</span>
+                </h2>
+            </div>
+        </div>
+
+        <div
+            class="filters"
+            role="group"
+            aria-label="Filter projects by category"
+        >
+            <button
+                class="btn filter-btn is-active"
+                type="button"
+                data-filter="all"
+                aria-pressed="true">Todos</button
+            >
+            <button
+                class="btn filter-btn"
+                type="button"
+                data-filter="web"
+                aria-pressed="false">Websites</button
+            >
+            <button
+                class="btn filter-btn"
+                type="button"
+                data-filter="shop"
+                aria-pressed="false">E-commerce</button
+            >
+        </div>
+
+        <div class="row g-4 project-grid">
+            {
+                projects.map((project, index) => (
+                    <div
+                        class="col-12 col-md-6 col-lg-4 project-column"
+                        data-category={project.category}
+                    >
+                        <article
+                            class:list={[
+                                "card",
+                                "project-card",
+                                `tone-${project.color}`,
+                            ]}
+                        >
+                            <div class="project-image-wrap">
+                                <img
+                                    class="project-image"
+                                    src={project.image}
+                                    alt={project.alt}
+                                    loading={index < 2 ? "eager" : "lazy"}
+                                />
+                                <span class="project-number">0{index + 1}</span>
+                                <span class="concept-label">Concept study</span>
+                            </div>
+                            <div class="card-body project-body">
+                                <div class="project-meta">
+                                    <span>{project.type}</span>
+                                    <span
+                                        class="meta-line"
+                                        aria-hidden="true"
+                                    />
+                                    <span>Sample</span>
+                                </div>
+                                <h3 class="card-title">{project.name}</h3>
+                                <p class="card-text">{project.description}</p>
+                            </div>
+                        </article>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
