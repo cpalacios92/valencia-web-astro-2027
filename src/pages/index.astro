@@ -4,6 +4,7 @@ import Header from "../componentes/Header/Header.astro";
 import Hero from "../componentes/Hero/Hero.astro";
 import Work from "../componentes/Work/Work.astro";
 import About from "../componentes/About/About.astro";
+import Footer from "../componentes/Footer/Footer.astro";
 
 const projects = [
 	{
@@ -115,34 +116,7 @@ const projects = [
 			<About />
 		</main>
 
-		<footer class="site-footer" id="contact">
-			<div class="site-width footer-inner">
-				<div>
-					<p class="eyebrow">Your next good thing starts here</p>
-					<h2>
-						Let's make it<br />matter<span class="period">.</span>
-					</h2>
-				</div>
-				<div class="footer-contact">
-					<a class="contact-link" href="mailto:hello@example.com"
-						>hello@example.com <span aria-hidden="true">↗</span></a
-					>
-					<p>
-						Valencia, Spain <span aria-hidden="true">·</span> Available
-						worldwide
-					</p>
-				</div>
-			</div>
-			<div class="site-width footer-bottom">
-				<a class="wordmark footer-wordmark" href="#top"
-					><span class="wordmark-mark" aria-hidden="true">V</span
-					><span>VALENCIA<span class="wordmark-light">WEB</span></span
-					></a
-				>
-				<p>© 2026 Valencia Web</p>
-				<a href="#top">Back to top ↑</a>
-			</div>
-		</footer>
+		<Footer />
 
 		<script>
 			import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -225,57 +199,6 @@ const projects = [
 				top: 16px;
 			}
 
-			.site-width {
-				width: min(100% - 64px, 1320px);
-				margin-inline: auto;
-			}
-
-			.footer-bottom {
-				display: flex;
-				align-items: center;
-			}
-
-			.wordmark {
-				gap: 10px;
-				font-family: "Space Grotesk", sans-serif;
-				font-size: 15px;
-				font-weight: 700;
-				letter-spacing: 0;
-			}
-
-			.wordmark-light {
-				font-weight: 400;
-			}
-
-			.wordmark-mark {
-				display: grid;
-				width: 34px;
-				aspect-ratio: 1;
-				place-items: center;
-				background: var(--ink);
-				color: var(--acid);
-				font-family: "Space Grotesk", sans-serif;
-				font-size: 19px;
-			}
-
-			.contact-link,
-			.footer-bottom > a:last-child {
-				transition: color 180ms ease;
-			}
-
-			.contact-link:hover,
-			.footer-bottom > a:last-child:hover {
-				color: var(--orange);
-			}
-
-			.eyebrow {
-				margin: 0;
-				font-size: 11px;
-				font-weight: 700;
-				letter-spacing: 0;
-				text-transform: uppercase;
-			}
-
 			.status-dot {
 				display: inline-block;
 				width: 8px;
@@ -292,16 +215,6 @@ const projects = [
 				font-weight: 500;
 			}
 
-			.site-footer h2 {
-				font-family: "Space Grotesk", sans-serif;
-				font-weight: 500;
-				letter-spacing: 0;
-			}
-
-			.period {
-				color: var(--orange);
-			}
-
 			.work-section {
 				padding: 94px 0 112px;
 				background: #e8ece5;
@@ -314,124 +227,11 @@ const projects = [
 				margin-bottom: 32px;
 			}
 
-			.site-footer {
-				padding: 78px 0 22px;
-				background: var(--ink);
-				color: var(--paper);
-			}
-
-			.footer-inner {
-				display: flex;
-				align-items: end;
-				justify-content: space-between;
-				gap: 40px;
-				padding-bottom: 78px;
-			}
-
-			.site-footer .eyebrow {
-				margin-bottom: 17px;
-				color: #aeb8b0;
-			}
-
-			.site-footer h2 {
-				margin: 0;
-				font-size: 64px;
-				line-height: 0.98;
-			}
-
-			.footer-contact {
-				padding-bottom: 5px;
-			}
-
-			.contact-link {
-				display: inline-flex;
-				gap: 24px;
-				align-items: center;
-				padding-bottom: 8px;
-				border-bottom: 1px solid #707a72;
-				font-size: 20px;
-				font-weight: 600;
-			}
-
-			.footer-contact p {
-				margin: 14px 0 0;
-				color: #aeb8b0;
-				font-size: 12px;
-			}
-
-			.footer-bottom {
-				min-height: 62px;
-				justify-content: space-between;
-				border-top: 1px solid #3d4640;
-				color: #aeb8b0;
-				font-size: 11px;
-			}
-
-			.footer-bottom p {
-				margin: 0;
-			}
-
-			.footer-wordmark {
-				color: var(--paper);
-				font-size: 12px;
-			}
-
-			.footer-wordmark .wordmark-mark {
-				width: 26px;
-				background: var(--acid);
-				color: var(--ink);
-				font-size: 15px;
-			}
-
-			@media (max-width: 760px) {
-				.site-width {
-					width: min(100% - 40px, 600px);
-				}
-
-				.footer-inner {
-					align-items: start;
-					flex-direction: column;
-					gap: 38px;
-					padding-bottom: 58px;
-				}
-
-				.site-footer h2 {
-					font-size: 56px;
-				}
-			}
-
-			@media (max-width: 420px) {
-				.site-width {
-					width: min(100% - 32px, 600px);
-				}
-
-				.wordmark {
-					gap: 7px;
-					font-size: 13px;
-				}
-
-				.wordmark-mark {
-					width: 29px;
-					font-size: 16px;
-				}
-
-				.footer-bottom {
-					gap: 8px;
-					font-size: 9px;
-				}
-
-				.footer-wordmark {
-					font-size: 10px;
-				}
-			}
-
 			@media (prefers-reduced-motion: reduce) {
 				:global(html) {
 					scroll-behavior: auto;
 				}
-				.main-nav a,
-				.contact-link,
-				.footer-bottom > a:last-child {
+				.main-nav a {
 					transition: none;
 				}
 			}

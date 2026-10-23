@@ -1,0 +1,141 @@
+.site-footer {
+    padding: 78px 0 22px;
+    background: var(--ink);
+    color: var(--paper);
+}
+
+.site-footer .site-width {
+    width: min(100% - 64px, 1320px);
+    margin-inline: auto;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 78px;
+}
+
+.site-footer .eyebrow {
+    margin: 0 0 17px;
+    color: #aeb8b0;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.site-footer h2 {
+    margin: 0;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 64px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 0.98;
+}
+
+.period {
+    color: var(--orange);
+}
+
+.footer-contact {
+    padding-bottom: 5px;
+}
+
+.contact-link,
+.footer-bottom>a:last-child {
+    transition: color 180ms ease;
+}
+
+.contact-link:hover,
+.footer-bottom>a:last-child:hover {
+    color: var(--orange);
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #707a72;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.footer-contact p {
+    margin: 14px 0 0;
+    color: #aeb8b0;
+    font-size: 12px;
+}
+
+.footer-bottom {
+    display: flex;
+    min-height: 62px;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #3d4640;
+    color: #aeb8b0;
+    font-size: 11px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-wordmark {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.footer-wordmark-logo {
+    display: block;
+    width: 160px;
+    height: 40px;
+    object-fit: contain;
+}
+
+@media (max-width: 760px) {
+    .site-footer .site-width {
+        width: min(100% - 40px, 600px);
+    }
+
+    .footer-inner {
+        align-items: start;
+        flex-direction: column;
+        gap: 38px;
+        padding-bottom: 58px;
+    }
+
+    .site-footer h2 {
+        font-size: 56px;
+    }
+}
+
+@media (max-width: 420px) {
+    .site-footer .site-width {
+        width: min(100% - 32px, 600px);
+    }
+
+    .footer-bottom {
+        gap: 8px;
+        font-size: 9px;
+    }
+
+    .footer-wordmark-logo {
+        width: 124px;
+        height: 31px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .contact-link,
+    .footer-bottom>a:last-child {
+        transition: none;
+    }
+}
