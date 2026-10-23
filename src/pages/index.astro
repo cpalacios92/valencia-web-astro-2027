@@ -1,6 +1,7 @@
 ---
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../componentes/Header/Header.astro";
+import Hero from "../componentes/Hero/Hero.astro";
 
 const projects = [
 	{
@@ -89,37 +90,7 @@ const projects = [
 		<Header />
 
 		<main id="main">
-			<section class="hero site-width" aria-labelledby="hero-title">
-				<div class="hero-copy">
-					<p class="eyebrow">
-						<span class="status-dot" aria-hidden="true"></span> Independent
-						digital portfolio <span class="eyebrow-place"
-							>/ Valencia, ES</span
-						>
-					</p>
-					<h1 id="hero-title">
-						Good websites<br />make you <span class="hero-accent"
-							>feel</span
-						> something<span class="period">.</span>
-					</h1>
-					<div class="hero-bottom">
-						<p class="hero-description">
-							A collection of digital places, thoughtful details,
-							and ideas brought to life on the web.
-						</p>
-						<a class="text-link" href="#projects"
-							>Explore selected work <span aria-hidden="true"
-								>↓</span
-							></a
-						>
-					</div>
-				</div>
-				<div class="hero-index" aria-hidden="true">
-					<span>PORTFOLIO</span>
-					<span>2024 — 2026</span>
-					<div class="index-stamp">V<br />W</div>
-				</div>
-			</section>
+			<Hero />
 
 			<section
 				class="work-section"
@@ -411,18 +382,6 @@ const projects = [
 		color: var(--orange);
 	}
 
-	.hero {
-		position: relative;
-		display: flex;
-		min-height: 590px;
-		align-items: center;
-		padding-block: 104px 94px;
-	}
-
-	.hero-copy {
-		width: min(100%, 930px);
-	}
-
 	.eyebrow {
 		margin: 0;
 		font-size: 11px;
@@ -447,7 +406,6 @@ const projects = [
 		font-weight: 500;
 	}
 
-	.hero h1,
 	.section-heading h2,
 	.about-copy h2,
 	.site-footer h2 {
@@ -456,48 +414,8 @@ const projects = [
 		letter-spacing: 0;
 	}
 
-	.hero h1 {
-		max-width: 930px;
-		margin: 30px 0 43px;
-		font-size: clamp(54px, 7.5vw, 104px);
-		line-height: 0.98;
-	}
-
-	.hero-accent {
-		position: relative;
-		z-index: 0;
-		font-style: italic;
-	}
-
-	.hero-accent::after {
-		position: absolute;
-		z-index: -1;
-		right: -5px;
-		bottom: 5px;
-		left: -4px;
-		height: 19px;
-		background: var(--acid);
-		content: "";
-	}
-
 	.period {
 		color: var(--orange);
-	}
-
-	.hero-bottom {
-		display: flex;
-		max-width: 710px;
-		align-items: end;
-		justify-content: space-between;
-		gap: 28px;
-	}
-
-	.hero-description {
-		max-width: 365px;
-		margin: 0;
-		color: #59615d;
-		font-size: 16px;
-		line-height: 1.6;
 	}
 
 	.text-link {
@@ -509,33 +427,6 @@ const projects = [
 		font-size: 13px;
 		font-weight: 700;
 		white-space: nowrap;
-	}
-
-	.hero-index {
-		position: absolute;
-		right: 0;
-		bottom: 89px;
-		display: grid;
-		gap: 5px;
-		color: var(--muted);
-		font-size: 9px;
-		font-weight: 700;
-		text-align: right;
-	}
-
-	.index-stamp {
-		display: grid;
-		width: 46px;
-		aspect-ratio: 1;
-		margin-top: 10px;
-		place-content: center;
-		border: 1px solid var(--line);
-		border-radius: 50%;
-		color: var(--orange);
-		font-family: "Space Grotesk", sans-serif;
-		font-size: 12px;
-		line-height: 1.05;
-		text-align: center;
 	}
 
 	.work-section {
@@ -872,55 +763,6 @@ const projects = [
 			width: min(100% - 40px, 600px);
 		}
 
-		.header-inner {
-			min-height: 70px;
-		}
-
-		.main-nav {
-			gap: 16px;
-			font-size: 12px;
-		}
-
-		.main-nav a:first-child span,
-		.main-nav a:nth-child(2) {
-			display: none;
-		}
-
-		.main-nav .nav-contact {
-			padding: 9px 10px;
-		}
-
-		.hero {
-			min-height: auto;
-			padding-block: 90px 82px;
-		}
-
-		.hero h1 {
-			margin-block: 24px 30px;
-			font-size: clamp(52px, 12vw, 78px);
-		}
-
-		.hero-bottom {
-			align-items: start;
-			flex-direction: column;
-			gap: 20px;
-		}
-
-		.hero-index {
-			right: 0;
-			bottom: 23px;
-			grid-template-columns: auto auto;
-			gap: 8px;
-			align-items: center;
-			font-size: 8px;
-		}
-
-		.index-stamp {
-			width: 28px;
-			margin: 0;
-			font-size: 9px;
-		}
-
 		.work-section {
 			padding-block: 70px 78px;
 		}
@@ -975,14 +817,6 @@ const projects = [
 		.wordmark-mark {
 			width: 29px;
 			font-size: 16px;
-		}
-
-		.hero h1 {
-			font-size: 49px;
-		}
-
-		.hero-index {
-			font-size: 7px;
 		}
 
 		.section-heading h2 {

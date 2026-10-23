@@ -21,27 +21,17 @@
 }
 
 .wordmark {
-    gap: 10px;
+    display: flex;
+    align-items: center;
     color: inherit;
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 15px;
-    font-weight: 700;
     text-decoration: none;
 }
 
-.wordmark-light {
-    font-weight: 400;
-}
-
-.wordmark-mark {
-    display: grid;
-    width: 34px;
-    aspect-ratio: 1;
-    place-items: center;
-    background: #19201f;
-    color: #d7ff6e;
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 19px;
+.wordmark-logo {
+    display: block;
+    width: 160px;
+    height: 40px;
+    object-fit: contain;
 }
 
 .main-nav {
@@ -98,13 +88,12 @@
     }
 
     .wordmark {
-        gap: 7px;
-        font-size: 13px;
+        flex-shrink: 0;
     }
 
-    .wordmark-mark {
-        width: 29px;
-        font-size: 16px;
+    .wordmark-logo {
+        width: 126px;
+        height: 32px;
     }
 }
 
