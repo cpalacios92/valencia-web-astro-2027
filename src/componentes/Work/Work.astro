@@ -1,6 +1,20 @@
 ---
 import "./work.css";
 
+interface Project {
+    name: string;
+    type: string;
+    category: string;
+    description: string;
+    image: string;
+    alt: string;
+    color: string;
+}
+
+interface Props {
+    projects: Project[];
+}
+
 const { projects } = Astro.props;
 ---
 
@@ -39,6 +53,12 @@ const { projects } = Astro.props;
                 type="button"
                 data-filter="shop"
                 aria-pressed="false">E-commerce</button
+            >
+            <button
+                class="btn filter-btn"
+                type="button"
+                data-filter="brand"
+                aria-pressed="false">Identidad</button
             >
         </div>
 

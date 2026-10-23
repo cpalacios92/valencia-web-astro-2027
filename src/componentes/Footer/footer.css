@@ -17,15 +17,6 @@
     padding-bottom: 78px;
 }
 
-.site-footer .eyebrow {
-    margin: 0 0 17px;
-    color: #aeb8b0;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0;
-    text-transform: uppercase;
-}
-
 .site-footer h2 {
     margin: 0;
     font-family: "Space Grotesk", sans-serif;
@@ -61,12 +52,6 @@
     border-bottom: 1px solid #707a72;
     font-size: 20px;
     font-weight: 600;
-}
-
-.footer-contact p {
-    margin: 14px 0 0;
-    color: #aeb8b0;
-    font-size: 12px;
 }
 
 .footer-bottom {
