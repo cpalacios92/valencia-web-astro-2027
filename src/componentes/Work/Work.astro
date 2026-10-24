@@ -67,7 +67,7 @@ const projects: Project[] = [
         <div class="section-heading">
             <div>
                 <h2 id="work-title">
-                    Trabajos<span class="period">.</span>
+                    Proyectos desarrollados<span class="period">.</span>
                 </h2>
             </div>
         </div>
@@ -112,6 +112,10 @@ const projects: Project[] = [
                             aria-label={`${project.name} — ${project.type}`}
                         >
                             <article class="card project-card">
+                                <div class="card-body project-body">
+                                    <h3 class="card-title">{project.name}</h3>
+                                    <p class="project-type">{project.type}</p>
+                                </div>
                                 <div class="project-image-wrap">
                                     <img
                                         class="project-image"
@@ -119,10 +123,6 @@ const projects: Project[] = [
                                         alt={project.alt}
                                         loading={index < 2 ? "eager" : "lazy"}
                                     />
-                                </div>
-                                <div class="card-body project-body">
-                                    <p class="project-type">{project.type}</p>
-                                    <h3 class="card-title">{project.name}</h3>
                                 </div>
                             </article>
                         </a>
