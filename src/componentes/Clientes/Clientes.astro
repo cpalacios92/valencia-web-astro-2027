@@ -1,19 +1,27 @@
 ---
 import "./clientes.css";
 
-interface Client {
-    name: string;
-    wordmark: string;
-    style: "serif" | "wide" | "italic" | "mono" | "bold" | "soft";
-}
-
-const clients: Client[] = [
-    { name: "Casa Roble", wordmark: "casa roble", style: "serif" },
-    { name: "Norte Studio", wordmark: "NORTE", style: "wide" },
-    { name: "Luma Café", wordmark: "luma café", style: "italic" },
-    { name: "Forma Objects", wordmark: "FORMA", style: "mono" },
-    { name: "Marea Estudio", wordmark: "marea", style: "soft" },
-    { name: "Cobalto", wordmark: "COBALTO", style: "bold" },
+const clients = [
+    {
+        name: "Agro Tour El Llano",
+        logo: "/imges/clientes/valencia_web_agro_tour_el_llano_logo.webp",
+    },
+    {
+        name: "Amar Ropa Médica",
+        logo: "/imges/clientes/valencia_web_amar_ropa_medica_logo.webp",
+    },
+    {
+        name: "Corporación Somos La Trece",
+        logo: "/imges/clientes/valencia_web_corporacion_somos_la_trece_logo.webp",
+    },
+    {
+        name: "DJ Productor Black Criss",
+        logo: "/imges/clientes/valencia_web_dj_productor_black_Criss_logo.webp",
+    },
+    {
+        name: "Power Audio Producciones",
+        logo: "/imges/clientes/valencia_web_power_audio_producciones_logo.webp",
+    },
 ];
 ---
 
@@ -27,15 +35,8 @@ const clients: Client[] = [
         <div class="clientes-grid">
             {
                 clients.map((client) => (
-                    <div
-                        class:list={[
-                            "cliente-logo",
-                            `cliente-logo--${client.style}`,
-                        ]}
-                        role="img"
-                        aria-label={`Logo de muestra: ${client.name}`}
-                    >
-                        <span aria-hidden="true">{client.wordmark}</span>
+                    <div class="cliente-logo">
+                        <img src={client.logo} alt={`Logo de ${client.name}`} />
                     </div>
                 ))
             }

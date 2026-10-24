@@ -15,14 +15,6 @@
     font-weight: 500;
 }
 
-.clientes-kicker {
-    margin: 0 0 8px;
-    color: var(--muted);
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
 .clientes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -36,51 +28,13 @@
     min-height: 112px;
     place-items: center;
     padding: 20px;
-    border: 1px solid var(--line);
-    background: var(--paper);
 }
 
-.cliente-logo span {
+.cliente-logo img {
+    display: block;
     max-width: 100%;
-    color: var(--ink);
-    font-size: 20px;
-    line-height: 1.1;
-    text-align: center;
-}
-
-.cliente-logo--serif span {
-    font-family: Georgia, serif;
-    font-weight: 700;
-}
-
-.cliente-logo--wide span {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.cliente-logo--italic span {
-    font-family: Georgia, serif;
-    font-size: 23px;
-    font-style: italic;
-}
-
-.cliente-logo--mono span {
-    font-family: "Courier New", monospace;
-    font-size: 19px;
-    font-weight: 700;
-}
-
-.cliente-logo--soft span {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-}
-
-.cliente-logo--bold span {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 19px;
-    font-weight: 700;
+    max-height: 100px;
+    object-fit: contain;
 }
 
 @media (max-width: 760px) {
