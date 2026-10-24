@@ -15,15 +15,6 @@
     margin-bottom: 32px;
 }
 
-.section-eyebrow {
-    margin: 0 0 12px;
-    color: var(--muted);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0;
-    text-transform: uppercase;
-}
-
 .section-heading h2 {
     margin: 0;
     font-family: "Space Grotesk", sans-serif;
@@ -67,6 +58,18 @@
     display: none;
 }
 
+.project-link {
+    display: block;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+.project-link:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 4px;
+}
+
 .project-card {
     height: 100%;
     overflow: hidden;
@@ -74,6 +77,15 @@
     border-radius: 0;
     background: transparent;
     animation: rise-in 500ms both;
+    transition:
+        transform 220ms ease,
+        box-shadow 220ms ease;
+}
+
+.project-link:hover .project-card,
+.project-link:focus-visible .project-card {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgb(25 32 31 / 10%);
 }
 
 .project-column:nth-child(2) .project-card {
@@ -114,85 +126,23 @@
     transform: scale(1.04);
 }
 
-.project-number,
-.concept-label {
-    position: absolute;
-    top: 14px;
-    padding: 7px 9px;
-    background: var(--paper);
-    color: var(--ink);
-    font-size: 9px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.project-number {
-    left: 14px;
-}
-
-.concept-label {
-    right: 14px;
-    background: var(--acid);
-}
-
 .project-body {
     padding: 18px 2px 8px;
 }
 
-.project-meta {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
+.project-type {
+    margin: 0 0 8px;
     color: var(--muted);
     font-size: 10px;
     font-weight: 600;
     text-transform: uppercase;
 }
 
-.meta-line {
-    width: 18px;
-    height: 1px;
-    background: #aeb5ae;
-}
-
 .project-body .card-title {
-    margin-bottom: 5px;
+    margin-bottom: 0;
     font-family: "Space Grotesk", sans-serif;
     font-size: 21px;
     font-weight: 500;
-}
-
-.project-body .card-text {
-    max-width: 340px;
-    margin: 0;
-    color: #646d68;
-    font-size: 13px;
-    line-height: 1.55;
-}
-
-.tone-clay .project-number {
-    background: #f4d7c4;
-}
-
-.tone-blue .project-number {
-    background: #c9e1e6;
-}
-
-.tone-red .project-number {
-    background: #f0c5b6;
-}
-
-.tone-green .project-number {
-    background: #d5e4c7;
-}
-
-.tone-yellow .project-number {
-    background: #eee0a7;
-}
-
-.tone-pink .project-number {
-    background: #efcbd4;
 }
 
 @keyframes rise-in {
@@ -230,10 +180,6 @@
         font-size: 34px;
     }
 
-    .work-count {
-        font-size: 10px;
-    }
-
     .filters {
         gap: 6px;
     }
@@ -248,6 +194,7 @@
 @media (prefers-reduced-motion: reduce) {
     .project-card {
         animation: none;
+        transition: none;
     }
 
     .project-image {

@@ -7,64 +7,6 @@ import Work from "../componentes/Work/Work.astro";
 import About from "../componentes/About/About.astro";
 import Footer from "../componentes/Footer/Footer.astro";
 import Clientes from "../componentes/Clientes/Clientes.astro";
-
-const projects = [
-	{
-		name: "Fika Objects",
-		type: "Commerce",
-		category: "shop",
-		description:
-			"A quieter kind of online shop for useful, well-made things.",
-		image: "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1200&q=85",
-		alt: "Minimal wooden chair in a bright, modern interior",
-		color: "clay",
-	},
-	{
-		name: "Open Roads",
-		type: "Travel",
-		category: "web",
-		description: "An editorial guide to taking the scenic route.",
-		image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85",
-		alt: "Mountain landscape beneath a wide open sky",
-		color: "blue",
-	},
-	{
-		name: "Sunday Supply",
-		type: "Identity + shop",
-		category: "brand",
-		description: "A sunny identity for a small-batch essentials label.",
-		image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=85",
-		alt: "Bright red sneaker photographed against a red background",
-		color: "red",
-	},
-	{
-		name: "Fieldnotes",
-		type: "Studio",
-		category: "web",
-		description: "A digital home for a design practice rooted in nature.",
-		image: "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=1200&q=85",
-		alt: "Sunlit table with coffee and a notebook",
-		color: "green",
-	},
-	{
-		name: "Form & Function",
-		type: "Identity",
-		category: "brand",
-		description: "A flexible visual system for a modern interiors atelier.",
-		image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=85",
-		alt: "Warm, considered creative studio with a desk and plants",
-		color: "yellow",
-	},
-	{
-		name: "The Daily Ritual",
-		type: "Commerce",
-		category: "shop",
-		description: "A thoughtful storefront for everyday coffee rituals.",
-		image: "https://images.unsplash.com/photo-1442512595367-427325f1fb72?auto=format&fit=crop&w=1200&q=85",
-		alt: "Coffee being prepared in a bright cafe",
-		color: "pink",
-	},
-];
 ---
 
 <html lang="es">
@@ -95,7 +37,7 @@ const projects = [
 		<Header />
 		<main id="main">
 			<Hero />
-			<Work projects={projects} />
+			<Work />
 			<Clientes />
 			<About />
 		</main>

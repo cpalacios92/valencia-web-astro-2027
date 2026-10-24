@@ -5,26 +5,67 @@ interface Project {
     name: string;
     type: string;
     category: string;
-    description: string;
     image: string;
+    link: string;
     alt: string;
-    color: string;
 }
 
-interface Props {
-    projects: Project[];
-}
-
-const { projects } = Astro.props;
+const projects: Project[] = [
+    {
+        name: "Agro Tour El Llano",
+        type: "Turismo y experiencias",
+        category: "web",
+        image: "/imges/works/valencia_web_agro_tour_el_llano.webp",
+        link: "https://agrotourcafeyfrutas.com/",
+        alt: "Sitio web de Agro Tour El Llano",
+    },
+    {
+        name: "Amar Ropa Médica",
+        type: "Tienda en línea",
+        category: "shop",
+        image: "/imges/works/valencia_web_amar_ropa_medica.webp",
+        link: "https://amarropamedica.com/",
+        alt: "Sitio web de Amar Ropa Médica",
+    },
+    {
+        name: "Corporación Somos La Trece",
+        type: "Sitio web corporativo",
+        category: "web",
+        image: "/imges/works/valencia_web_corporacion_somos_la_trece.webp",
+        link: "https://corporacionsomosla13.org/",
+        alt: "Sitio web de Corporación Somos La Trece",
+    },
+    {
+        name: "Black Criss",
+        type: "Sitio web de artista",
+        category: "web",
+        image: "/imges/works/valencia_web_black_criss.webp",
+        link: "https://blackcriss.com/",
+        alt: "Sitio web oficial de Black Criss",
+    },
+    {
+        name: "Black Criss — BCITH Merch",
+        type: "Tienda en línea",
+        category: "shop",
+        image: "/imges/works/valencia_web_dj_productor_black_criss_bcith_merch.webp",
+        link: "https://shop.blackcriss.com/",
+        alt: "Tienda oficial de BCITH Merch de Black Criss",
+    },
+    {
+        name: "Power Audio Producciones",
+        type: "Producción de eventos y sonido",
+        category: "web",
+        image: "/imges/works/valencia_web_power_audio_producciones.webp",
+        link: "https://poweraudioproducciones.com/",
+        alt: "Sitio web de Power Audio Producciones",
+    },
+];
 ---
 
 <section class="work-section" id="projects" aria-labelledby="work-title">
     <div class="work-inner">
         <div class="section-heading">
             <div>
-                <p class="section-eyebrow">
-                    Unas cuantas cosas hechas con esmero
-                </p>
                 <h2 id="work-title">
                     Trabajos<span class="period">.</span>
                 </h2>
@@ -63,36 +104,28 @@ const { projects } = Astro.props;
                         class="col-12 col-md-6 col-lg-4 project-column"
                         data-category={project.category}
                     >
-                        <article
-                            class:list={[
-                                "card",
-                                "project-card",
-                                `tone-${project.color}`,
-                            ]}
+                        <a
+                            class="project-link"
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${project.name} — ${project.type}`}
                         >
-                            <div class="project-image-wrap">
-                                <img
-                                    class="project-image"
-                                    src={project.image}
-                                    alt={project.alt}
-                                    loading={index < 2 ? "eager" : "lazy"}
-                                />
-                                <span class="project-number">0{index + 1}</span>
-                                <span class="concept-label">Concept study</span>
-                            </div>
-                            <div class="card-body project-body">
-                                <div class="project-meta">
-                                    <span>{project.type}</span>
-                                    <span
-                                        class="meta-line"
-                                        aria-hidden="true"
+                            <article class="card project-card">
+                                <div class="project-image-wrap">
+                                    <img
+                                        class="project-image"
+                                        src={project.image}
+                                        alt={project.alt}
+                                        loading={index < 2 ? "eager" : "lazy"}
                                     />
-                                    <span>Sample</span>
                                 </div>
-                                <h3 class="card-title">{project.name}</h3>
-                                <p class="card-text">{project.description}</p>
-                            </div>
-                        </article>
+                                <div class="card-body project-body">
+                                    <p class="project-type">{project.type}</p>
+                                    <h3 class="card-title">{project.name}</h3>
+                                </div>
+                            </article>
+                        </a>
                     </div>
                 ))
             }
